@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  background: url(./gallery/Cold-weather.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.5s;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  max-width: 100vw;
+}
+.app.warm {
+  background: url(./gallery/Warm-weather.jpg);
+  background-position: center;
+}
+main {
+  height: 100vh;
   color: white;
+  padding: 0.5rem 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.4)
+  );
+}
+.search__box {
+  width: 100vw;
+  margin: 0 0 1rem;
+}
+.search__box .search__bar {
+  width: 100%;
+  padding: 0.7rem;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.4s ease;
+}
+.search__bar:focus {
+  background: rgba(255, 255, 255, 0.7);
+}
+.location__box {
+  text-align: center;
+  margin-top: 3rem;
+}
+.location {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px rgba(50, 50, 70, 0.5);
+}
+.date {
+  text-shadow: 2px 2px 2px rgba(50, 50, 70, 0.5);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.weather__box {
+  text-align: center;
+  margin-top: 2rem;
+}
+.temp {
+  padding: 1rem 1.5rem;
+  font-size: 5rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.2);
+  width: fit-content;
+  margin-inline: auto;
+  border-radius: 0.5rem;
+  text-shadow: 2px 2px 2px rgba(50, 50, 70, 0.5);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+}
+.weather {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-transform: capitalize;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 60rem) {
+  body {
+    background-image: linear-gradient(to bottom right, rgba(95, 158, 160, .6), rgba(128, 0, 32, .5));
   }
-  to {
-    transform: rotate(360deg);
+  .app, .search__box {
+    width: 60vw;
+    margin-inline: auto;
+  }
+  .search__bar {
+    width: 96%;
   }
 }
